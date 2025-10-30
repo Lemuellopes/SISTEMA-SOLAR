@@ -21,7 +21,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
   angleMode(DEGREES);
 
-  // 🌠 Cria poucas estrelas fixas no fundo (leve)
+  // Cria poucas estrelas fixas no fundo (leve)
   for (let i = 0; i < 300; i++) {
     stars.push({
       x: random(-2000, 2000),
@@ -47,7 +47,7 @@ function draw() {
   background(0);
   orbitControl();
 
-  // 🌌 Desenha estrelas
+  // Desenha estrelas
   push();
   noStroke();
   for (let s of stars) {
@@ -59,15 +59,15 @@ function draw() {
   }
   pop();
 
-  // 💡 Luz do sol
+  // Luz do sol
   ambientLight(80);
   pointLight(255, 255, 255, 0, 0, 0);
 
-  // 🎥 Câmera
+  // Câmera
   rotateX(80);
   rotateZ(frameCount * 0.03);
 
-  // 🌞 Sol
+  // Sol
   push();
   noStroke();
   emissiveMaterial(255, 200, 80);
@@ -75,14 +75,14 @@ function draw() {
   sphere(60);
   pop();
 
-  // ⚪ Órbitas
+  // Órbitas
   noFill();
   stroke(80);
   for (let p of planets) {
     ellipse(0, 0, p.distance * 2);
   }
 
-  // 🪐 Planetas
+  // Planetas
   for (let p of planets) {
     p.update();
     p.show();
